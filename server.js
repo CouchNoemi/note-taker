@@ -2,7 +2,7 @@ const express = require("express");
 let db = require("./db/db.json");
 
 // define port
-const port = 3001;
+const port = process.env.__dirname ||  3001;
 
 // start app
 const app = express();
