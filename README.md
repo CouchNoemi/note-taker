@@ -42,6 +42,6 @@ SOFTWARE.
 # git-hub url
 https://github.com/CouchNoemi/note-taker
 
-#heroku link
+# heroku link
 
  https://note-takertwo.herokuapp.com/notes
