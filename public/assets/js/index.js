@@ -25,15 +25,12 @@ const hide = (elem) => {
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
-alert("working");
 
 const getNotes = () =>
   fetch("/api/notes", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*",
     },
   });
 
@@ -42,8 +39,6 @@ const saveNote = (note) =>
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*",
     },
     body: JSON.stringify(note),
   });
@@ -53,8 +48,6 @@ const deleteNote = (id) =>
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*",
     },
   });
 

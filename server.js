@@ -1,5 +1,5 @@
 const express = require("express");
-let db = require("./Develop/db/db.json");
+let db = require("./db/db.json");
 
 // define port
 const port = 3001;
@@ -8,8 +8,7 @@ const port = 3001;
 const app = express();
 
 // middleware
-app.use(express.static("public"));
-app.use(express.static("assets"));
+app.use(express.static(__dirname + "/public"));// defining static files follder
 app.use(express.json()); // allows us to recieve json data from frontend
 
 // get all notes route
@@ -38,10 +37,10 @@ app.delete("/api/notes/:id", (req, res) => {
 });
 
 app.get("/notes", (req, res) => {
-  res.sendFile(__dirname + "/public/assets/notes.html"); //localhost:3001/public/as
+  res.sendFile(__dirname + "/public/notes.html"); //directoryname/public/notes.html
 });
 app.get("*", (req, res) => {
-  res.sendFile(__dirname + "/public/assets/index.html");
+  res.sendFile(__dirname + "/public/index.html"); //directoryname/public/notes.html
 });
 
 app.listen(port, () => console.log(`server started at PORT: ${port}`));
